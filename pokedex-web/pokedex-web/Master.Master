@@ -27,13 +27,29 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="./PokemonListar.aspx">Lista Pokemons</a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
+                                <asp:Button runat="server" ID="btnEnviarCorreo" OnClick="btnEnviarCorreo_Click" Text="Enviar Correo" CssClass="nav-link" />
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                <asp:Button runat="server" ID="btnMiPerfil" OnClick="btnMiPerfil_Click" Text="Mi Perfil" CssClass="nav-link" />
                             </li>
                         </ul>
+                    </div>
+                    <div class="d-flex">
+                        <%if ((Session["trainee"] == null))
+                            {%>
+                        <a class="btn btn-success me-2" href="Login.aspx">Login</a>
+                        <a class="btn btn-outline-primary me-2" href="Registro.aspx">Registrarse</a>
+                        <%} %>
+                        <%--if(!negocio.Seguridad.sessionActiva(Session["trainee"])) esta es otra condicion--%>
+                        <%if ((Session["trainee"] != null))
+                            {%>
+
+                        <asp:Button runat="server" ID="btnCerrarSesion" CssClass="btn btn-outline-primary me-2" OnClick="btnCerrarSesion_Click" Text="Cerrar Sesion" />
+                        <asp:Image runat="server" ID="imgPerfil" style="height:40px ; width:40px ; border-radius:50%;"
+                             ImageUrl="../img/imagenes-de-usuario.png"/>
+                        <%} %>
                     </div>
                 </div>
             </nav>
