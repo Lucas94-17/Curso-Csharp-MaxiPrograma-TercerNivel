@@ -11,10 +11,10 @@ namespace pokedex_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["error"] != null)
-            {
+            //if (Session["error"] != null)
+            //{
                 lblerror.Text = Session["error"].ToString();
-            }
+            //}
         }
     }
 }

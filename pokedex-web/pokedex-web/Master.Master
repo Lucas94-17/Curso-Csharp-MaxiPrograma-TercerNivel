@@ -47,8 +47,8 @@
                             {%>
 
                         <asp:Button runat="server" ID="btnCerrarSesion" CssClass="btn btn-outline-primary me-2" OnClick="btnCerrarSesion_Click" Text="Cerrar Sesion" />
-                        <asp:Image runat="server" ID="imgPerfil" style="height:40px ; width:40px ; border-radius:50%;"
-                             ImageUrl="../img/imagenes-de-usuario.png"/>
+                        <asp:Image runat="server" ID="imgAvatar" Style="height: 40px; width: 40px; border-radius: 50%;" />
+                        <asp:Label ID="lblUser" Text="user" CssClass="text-light m-auto me-2" runat="server" />
                         <%} %>
                     </div>
                 </div>
