@@ -21,13 +21,19 @@ namespace pokedex_web
         {
             TraineeNegocio Negocio = new TraineeNegocio();
             Trainee trainee = new Trainee();
-            //try
-            //{
+            try
+            {
+
+                if (Validacion.validaTextoVacio(txtEmail.Text) || Validacion.validaTextoVacio(txtPassword.Text))
+                {
+                    Session.Add("error", "Debe completar ambos campos");
+                    Response.Redirect("Error.aspx",false);
+                }
                 trainee.Email = txtEmail.Text;
-                trainee.Pass  = txtPassword.Text;
+                trainee.Pass = txtPassword.Text;
                 if (Negocio.Login(trainee))
                 {
-                    Session.Add("trainee",trainee);
+                    Session.Add("trainee", trainee);
                     Response.Redirect("MiPerfil.aspx", false);
                 }
                 else
@@ -35,12 +41,17 @@ namespace pokedex_web
                     Session.Add("error", "user o password incorrectos ");
                     Response.Redirect("Error.aspx", false);
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Session.Add("error", ex.ToString());
-            //    Response.Redirect("Error.aspx", false);
-            //}
+            }
+            catch (System.Threading.ThreadAbortException ex)
+            {
+
+            }
+            
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
+            }
         }
         private void Page_Error(object sender, EventArgs e)
         {
@@ -49,5 +60,5 @@ namespace pokedex_web
             Server.Transfer("Error.aspx");
         }
     }
-    
+
 }

@@ -9,6 +9,9 @@
             <div class="mb-3">
                 <label class="form-label">Email</label>
                 <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control"></asp:TextBox>
+                <asp:RegularExpressionValidator ErrorMessage="Formato Email por favor" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                    runat="server" />
+
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>

@@ -41,6 +41,11 @@ namespace pokedex_web
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                {
+                    return;
+                }
                 TraineeNegocio traineeNegocio = new TraineeNegocio();
                 Trainee user = (Trainee)Session["trainee"];
                 //Escribir img si se cargo algo
