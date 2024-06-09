@@ -27,7 +27,7 @@ namespace pokedex_web
         }
         protected void dgvPokemons_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            dgvpokemons.PageIndex = e.NewPageIndex  ;
+            dgvpokemons.PageIndex = e.NewPageIndex;
             dgvpokemons.DataBind();
         }
         protected void dgvPokemos_SelectIndexChanged(object sender, EventArgs e)

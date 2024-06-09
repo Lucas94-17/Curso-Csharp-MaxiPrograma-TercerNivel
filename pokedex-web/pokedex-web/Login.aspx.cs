@@ -29,8 +29,10 @@ namespace pokedex_web
                     Session.Add("error", "Debe completar ambos campos");
                     Response.Redirect("Error.aspx",false);
                 }
+                //Instancia de objeto Trainee
                 trainee.Email = txtEmail.Text;
                 trainee.Pass = txtPassword.Text;
+                //Se asegura si true la funcion login , con los datos del objeto cargados anteriormente ! 
                 if (Negocio.Login(trainee))
                 {
                     Session.Add("trainee", trainee);

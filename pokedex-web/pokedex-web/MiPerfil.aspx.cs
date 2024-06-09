@@ -29,7 +29,6 @@ namespace pokedex_web
                             imgNuevoPerfil.ImageUrl = "~/Img/" + user.ImagenPerfil;
                     }
                 }
-
             }
             catch (Exception ex)
             {

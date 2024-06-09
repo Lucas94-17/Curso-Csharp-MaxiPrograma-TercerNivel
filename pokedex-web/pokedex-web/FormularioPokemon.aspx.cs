@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,9 +35,9 @@ namespace pokedex_web
                     dropDebilidad.DataValueField = "id";
                     dropDebilidad.DataTextField = "Descripcion";
                     dropDebilidad.DataBind();
-
                 }
                 //Configuracion si estamos modificando
+                //Esto agarra el Id del enlace , es decir lo recupera
                 string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
                 if (id != "" && !IsPostBack)
                 {

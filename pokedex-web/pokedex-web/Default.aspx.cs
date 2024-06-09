@@ -22,7 +22,7 @@ namespace pokedex_web
                 Repetidor.DataSource = ListaPokemon;
                 Repetidor.DataBind();
             }
-
+            
         }
 
         protected void btnEjemplo_Click(object sender, EventArgs e)
